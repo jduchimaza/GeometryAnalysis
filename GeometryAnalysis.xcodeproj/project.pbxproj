@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8A728B3236BECFD0060C9ED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8A728B2236BECFD0060C9ED /* main.cpp */; };
+		A8A728BD236BF5850060C9ED /* Molecule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8A728BB236BF5850060C9ED /* Molecule.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		A8A728AF236BECFD0060C9ED /* GeometryAnalysis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GeometryAnalysis; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A728B2236BECFD0060C9ED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A8A728BB236BF5850060C9ED /* Molecule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Molecule.cpp; sourceTree = "<group>"; };
+		A8A728BC236BF5850060C9ED /* Molecule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Molecule.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				A8A728B2236BECFD0060C9ED /* main.cpp */,
+				A8A728BB236BF5850060C9ED /* Molecule.cpp */,
+				A8A728BC236BF5850060C9ED /* Molecule.hpp */,
 			);
 			path = GeometryAnalysis;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A728B3236BECFD0060C9ED /* main.cpp in Sources */,
+				A8A728BD236BF5850060C9ED /* Molecule.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
