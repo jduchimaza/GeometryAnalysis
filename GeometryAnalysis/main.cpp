@@ -46,7 +46,7 @@ int main(int argc, const char * argv[]) {
         for(int j = 0; j < i; j++){
             for(int k=0; k < j; k++){
                 if(acet.bond(i,j) < 4.0 && acet.bond(j,k) < 4.0)
-                    printf("Atoms %2d, %2d, %2d = %10.6f\n",i,j,k,acet.angle(i, j, k));
+                    printf("Atoms %2d, %2d, %2d = %10.6f\n",i,j,k,acet.angle(i, j, k)*(180.0/acos(-1.0)));
             }
         }
     }
@@ -58,11 +58,35 @@ int main(int argc, const char * argv[]) {
             for(int k = 0; k < acet.natom; k++){
                 for(int l = 0; l < j; l++){
                     if(i!=j && i!=k && i!=l && j!=k && k!=l && acet.bond(i,k) < 4.0 && acet.bond(k,j) < 4.0 && acet.bond(k,l) < 4.0)
-                        printf("Atoms %2d, %2d, %2d, %2d = %10.6f\n",i,j,k,l,acet.angle(i, j, k, l));
+                        printf("Atoms %2d, %2d, %2d, %2d = %10.6f\n",i,j,k,l,acet.angle(i, j, k, l)*(180.0/acos(-1.0)));
                 }
             }
         }
     }
+    
+    // Print dihedral/torsion angles
+    cout << "\nDihedrals:\n";
+    for(int i=0; i < acet.natom; i++){
+        for(int j=0; j < i; j++){
+            for(int k=0; k < j; k++){
+                for(int l=0; l < k; l++){
+                    if(acet.bond(i,j) < 4.0 && acet.bond(j,k) < 4.0 && acet.bond(k,l) < 4.0){
+                        printf("Atoms %2d, %2d, %2d, %2d = %10.6f\n",i,j,k,l,acet.dihedral(i, j, k, l)*(180.0/acos(-1.0)));
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "\nMolecular Mass:\n";
+    printf("%10.10f\n",acet.mass);
+    
+    cout << "\nCenter of Mass:\n";
+    printf("x: %12.8f, y: %12.8f, z: %12.8f\n", acet.com[0], acet.com[1], acet.com[2]);
+    acet.translate(acet.com[0], acet.com[1], acet.com[2]);
+    
+    cout << "\nNew Translated Coords:\n";
+    acet.print_coords();
     
     printf("\n\n");
     return 0;
